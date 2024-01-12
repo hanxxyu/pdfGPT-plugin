@@ -50,6 +50,10 @@ def query_pdf():
         pdf.download_pdf(url, 'corpus.pdf')
         pdf.load_recommender('corpus.pdf')
         answer = pdf.generate_answer(question)
+
+        #to be finfished 
+    
+
         return jsonify({"results": [answer]}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
