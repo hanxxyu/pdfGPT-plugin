@@ -82,9 +82,10 @@ async def query_pdf():
 
     import requests
     response = requests.get(url)
-    with open('backend\corpus.pdf',"wb") as file:
+    pdf_path= r"E:\GIT\pdfGPT-plugin\backend\corpus.pdf"
+    with open(pdf_path,"wb") as file:
         file.write(response.content)
-    pdf.load_recommender('backend\corpus.pdf')
+    pdf.load_recommender(pdf_path)
     answer = pdf.generate_answer(query)
     page_number = answer.split('no. ')[1].split(']')[0]
     answer_relavent = answer.split('"')[1]
