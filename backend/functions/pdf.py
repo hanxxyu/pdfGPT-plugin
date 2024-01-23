@@ -64,7 +64,7 @@ def text_to_chunks(texts, word_length=150, start_page=1):
 
 class SemanticSearch:
     def __init__(self):
-        self.use = hub.load('K:\model\encoder')
+        self.use = hub.load('E:\model')
         self.fitted = False
 
     def fit(self, data, batch=2000, n_neighbors=1):
